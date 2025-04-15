@@ -1,0 +1,7 @@
+services:
+    App\MailLoggerBundle\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Entity,Resources,Tests}'
+        autowire: true
+        autoconfigure: true
+        public: false
