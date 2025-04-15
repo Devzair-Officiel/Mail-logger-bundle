@@ -1,8 +1,8 @@
 <?php
 
-namespace App\MailLoggerBundle\EventSubscriber;
+namespace DevZair\MailLoggerBundle\EventSubscriber;
 
-use App\MailLoggerBundle\Service\EmailLogger;
+use DevZair\MailLoggerBundle\Service\EmailLogger;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Mailer\Event\SentMessageEvent;
 use Symfony\Component\Mailer\Event\FailedMessageEvent;

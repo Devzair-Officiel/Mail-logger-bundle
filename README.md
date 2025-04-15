@@ -48,16 +48,9 @@ composer require symfony/mailer symfony/mime
 parameters:
     mail_logger.enabled: true
 
-
-Et dans services.yaml, pensez à importer :
-
-imports:
-    - { resource: packages/parameters.yaml }
-
-
 2. Injectez ce paramètre dans le service :
 # config/services.yaml
-App\MailLoggerBundle\Service\EmailLogger:
+DevZair\MailLoggerBundle\Service\EmailLogger:
     arguments:
         $loggingEnabled: '%mail_logger.enabled%'
 
@@ -114,3 +107,4 @@ MailLoggerBundleConfigCommand   | Commande CLI pour afficher tous les paramètre
     symfony/mailer, symfony/mime
 
     Doctrine ORM
+

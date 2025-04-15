@@ -1,15 +1,15 @@
 {
-    "name": "devzair/mail-logger-bundle",
-    "description": "Symfony bundle to log all emails sent via Symfony Mailer",
-    "type": "symfony-bundle",
-    "license": "MIT",
-    "authors": [
+   "name": "devzair/mail-logger-bundle",
+   "description": "Symfony bundle to log all emails sent via Symfony Mailer",
+   "type": "symfony-bundle",
+   "license": "MIT",
+   "authors": [
       {
-        "name": "DevZair",
-        "email": "contact@devzair.fr"
+         "name": "DevZair",
+         "email": "contact@devzair.fr"
       }
-    ],
-    "require": {
+   ],
+   "require": {
       "php": ">=8.1",
       "symfony/mailer": "^6.0 || ^7.0",
       "symfony/mime": "^6.0 || ^7.0",
@@ -17,16 +17,23 @@
       "symfony/config": "^6.0 || ^7.0",
       "symfony/http-kernel": "^6.0 || ^7.0",
       "doctrine/orm": "^2.14 || ^3.0"
-    },
-    "autoload": {
+   },
+   "autoload": {
       "psr-4": {
-        "DevZair\\MailLoggerBundle\\": "src/"
+         "DevZair\\MailLoggerBundle\\": "src/"
       }
-    },
-    "extra": {
+   },
+   "autoload-dev": {
+      "psr-4": {
+         "DevZair\\MailLoggerBundle\\Tests\\": "tests/"
+      }
+   },
+   "extra": {
       "branch-alias": {
-        "dev-main": "1.0-dev"
+         "dev-main": "1.0-dev"
       }
-    }
-  }
-  
+   },
+   "require-dev": {
+      "phpunit/phpunit": "^11.5"
+   }
+}

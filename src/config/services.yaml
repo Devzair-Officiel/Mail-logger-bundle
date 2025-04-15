@@ -1,5 +1,5 @@
 services:
-    App\MailLoggerBundle\:
+    DevZair\MailLoggerBundle\:
         resource: '../../*'
         exclude: '../../{DependencyInjection,Entity,Resources,Tests}'
         autowire: true

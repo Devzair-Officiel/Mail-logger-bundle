@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MailLoggerBundle\Entity;
+namespace DevZair\MailLoggerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;

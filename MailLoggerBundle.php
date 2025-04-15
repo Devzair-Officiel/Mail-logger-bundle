@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MailLoggerBundle;
+namespace DevZair\MailLoggerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

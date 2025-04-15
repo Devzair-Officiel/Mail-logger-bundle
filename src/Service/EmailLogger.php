@@ -1,8 +1,8 @@
 <?php
 
-namespace App\MailLoggerBundle\Service;
+namespace DevZair\MailLoggerBundle\Service;
 
-use App\MailLoggerBundle\Entity\LoggedEmail;
+use DevZair\MailLoggerBundle\Entity\LoggedEmail;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Mailer\Event\SentMessageEvent;
 use Symfony\Component\Mailer\Event\FailedMessageEvent;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MailLoggerBundle\DependencyInjection;
+namespace DevZair\MailLoggerBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
