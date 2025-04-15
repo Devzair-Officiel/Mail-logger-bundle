@@ -35,9 +35,11 @@ Mais en cas de bug ou de doute, il est difficile de savoir :
 
 ## 🔧 Installation
 
-Ajoutez le bundle à votre projet Symfony (déjà intégré dans votre code source local) :
+Ajoutez le bundle à votre projet Symfony  :
 
 ```bash
+composer require devzair/mail-logger-bundle
+
 composer require symfony/mailer symfony/mime
 
 
