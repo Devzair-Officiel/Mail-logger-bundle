@@ -33,3 +33,6 @@ et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 - chore: update changelog for v1.0.2
 - chore: update changelog for v1.0.2
 - ✨ feat(composer): ajouter la dépendance symfony/validator
+
+## [v1.0.4] - 2025-04-16
+- Déplacement du fichier MailLoggerBundle dans le dossier src
