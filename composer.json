@@ -21,7 +21,7 @@
    },
    "autoload": {
       "psr-4": {
-         "DevZair\\MailLoggerBundle\\": "src/MailLoggerBundle/"
+         "DevZair\\MailLoggerBundle\\": "src/"
       }
    },
    "autoload-dev": {
