@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Command;
+namespace DevZair\MailLoggerBundle\Command;
 
-use App\MailLoggerBundle\Entity\LoggedEmail;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use DevZair\MailLoggerBundle\Entity\LoggedEmail;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
