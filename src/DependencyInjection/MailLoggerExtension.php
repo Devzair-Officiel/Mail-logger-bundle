@@ -15,8 +15,5 @@ class MailLoggerExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('mail_logger.enabled', $config['enabled']);
-
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
-        $loader->load('services.yaml');
     }
 }
