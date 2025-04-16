@@ -2,3 +2,4 @@
 /var/
 /.env
 .phpunit.result.cache
+/release.sh
