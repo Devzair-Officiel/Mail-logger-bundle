@@ -36,3 +36,6 @@ et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [v1.0.4] - 2025-04-16
 - Déplacement du fichier MailLoggerBundle dans le dossier src
+
+## [v1.0.5] - 2025-04-16
+- mise a jour du fichier composer.json pour l'autoload
