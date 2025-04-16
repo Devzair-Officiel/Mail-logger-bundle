@@ -39,3 +39,6 @@ et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [v1.0.5] - 2025-04-16
 - mise a jour du fichier composer.json pour l'autoload
+
+## [v1.0.6] - 2025-04-16
+- mise a jour du fichier MailLoggerExtension, car il n'y a pas de services.yaml
