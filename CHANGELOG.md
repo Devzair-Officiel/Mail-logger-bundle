@@ -23,3 +23,10 @@ et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 - Configuration centralisée via `mail_logger.yaml`
 - Injection de `%mail_logger.enabled%` dans les services
 
+
+## [v2.0.1] - 2025-04-17
+- mise a jour composer, branche et CHANGELOG
+- chore: update changelog for v1.0.1
+- mise a jour composer et changelog
+- chore: update changelog for v1.0.1
+- mise a jour composer
