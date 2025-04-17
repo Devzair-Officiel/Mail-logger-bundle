@@ -1,31 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DevZair\MailLoggerBundle\EventSubscriber;
 
 use DevZair\MailLoggerBundle\Service\EmailLogger;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Mailer\Event\SentMessageEvent;
-use Symfony\Component\Mailer\Event\FailedMessageEvent;
+use Symfony\Component\Mailer\Event\MessageEvent;
 
 final class EmailLoggerSubscriber implements EventSubscriberInterface
 {
-    public function __construct(private EmailLogger $logger) {}
+    /**
+     * @var EmailLogger
+     */
+    private $logger;
+
+    public function __construct(EmailLogger $logger)
+    {
+        $this->logger = $logger;
+    }
 
     public static function getSubscribedEvents(): array
     {
         return [
-            SentMessageEvent::class => 'onSent',
-            FailedMessageEvent::class => 'onFailed',
+            MessageEvent::class => 'onMessage',
         ];
     }
 
-    public function onSent(SentMessageEvent $event): void
+    public function onMessage(MessageEvent $event): void
     {
-        $this->logger->logSent($event);
-    }
-
-    public function onFailed(FailedMessageEvent $event): void
-    {
-        $this->logger->logFailed($event);
+        $this->logger->logFromEvent($event);
     }
 }

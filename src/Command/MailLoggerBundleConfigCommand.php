@@ -1,26 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DevZair\MailLoggerBundle\Command;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use DevZair\MailLoggerBundle\Entity\LoggedEmail;
-use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
-#[AsCommand(
-    name: 'mail:config',
-    description: 'Affiche la configuration active du MailLoggerBundle',
-)]
 class MailLoggerBundleConfigCommand extends Command
 {
-    public function __construct(
-        private ParameterBagInterface $params,
-        private EntityManagerInterface $em
-    ) {
+    protected static $defaultName = 'mail:config';
+    protected static $defaultDescription = 'Affiche la configuration active du MailLoggerBundle';
+
+    /**
+     * @var ParameterBagInterface
+     */
+    private $params;
+
+    /**
+     * @var EntityManagerInterface
+     */
+    private $em;
+
+    public function __construct(ParameterBagInterface $params, EntityManagerInterface $em)
+    {
         parent::__construct();
+        $this->params = $params;
+        $this->em = $em;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int

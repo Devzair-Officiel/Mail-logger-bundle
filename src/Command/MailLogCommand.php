@@ -1,24 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DevZair\MailLoggerBundle\Command;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use DevZair\MailLoggerBundle\Entity\LoggedEmail;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[AsCommand(
-    name: 'mail:log',
-    description: 'Liste les derniers emails envoyés (avec option --json)',
-)]
 class MailLogCommand extends Command
 {
-    public function __construct(private EntityManagerInterface $em)
+    protected static $defaultName = 'mail:log';
+    protected static $defaultDescription = 'Liste les derniers emails envoyés (avec option --json)';
+
+    /**
+     * @var EntityManagerInterface
+     */
+    private $em;
+
+    public function __construct(EntityManagerInterface $em)
     {
         parent::__construct();
+        $this->em = $em;
     }
 
     protected function configure(): void

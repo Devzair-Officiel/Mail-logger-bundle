@@ -1,63 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DevZair\MailLoggerBundle\Service;
 
 use DevZair\MailLoggerBundle\Entity\LoggedEmail;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Mailer\Event\SentMessageEvent;
-use Symfony\Component\Mailer\Event\FailedMessageEvent;
+use Symfony\Component\Mailer\Event\MessageEvent;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\RawMessage;
-use Symfony\Component\Mailer\SentMessage;
 
 class EmailLogger
 {
-    public function __construct(
-        private EntityManagerInterface $em,
-        private bool $loggingEnabled = true
-    ) {}
+    /**
+     * @var EntityManagerInterface
+     */
+    private $em;
 
-    public function logSent(SentMessageEvent $event): void
+    /**
+     * @var bool
+     */
+    private $loggingEnabled;
+
+    public function __construct(EntityManagerInterface $em, bool $loggingEnabled = true)
     {
-        $sentMessage = $event->getMessage();
-        $original = $sentMessage instanceof SentMessage ? $sentMessage->getOriginalMessage() : null;
+        $this->em = $em;
+        $this->loggingEnabled = $loggingEnabled;
+    }
 
-        if ($original instanceof Email) {
-            $this->log($original, 'success');
+    public function logFromEvent(MessageEvent $event): void
+    {
+        // Par défaut, on considère que MessageEvent = succès
+        $message = $event->getMessage();
+
+        if ($message instanceof Email) {
+            $this->log($message, 'success');
         }
     }
 
-    public function logFailed(FailedMessageEvent $event): void
-    {
-        $sentMessage = $event->getMessage();
-        $original = $sentMessage instanceof SentMessage ? $sentMessage->getOriginalMessage() : null;
-
-        $failures = []; // on ne log pas les destinataires en erreur (pas disponibles de façon sûre)
-
-        if ($original instanceof Email) {
-            $this->log($original, 'failed', $failures);
-        }
-    }
-
-    private function extractAddresses(array $addresses): array
-    {
-        $normalized = [];
-
-        foreach ($addresses as $address) {
-            if (method_exists($address, 'getAddress')) {
-                $normalized[] = [
-                    'email' => $address->getAddress(),
-                    'name' => $address->getName(),
-                ];
-            }
-        }
-
-        return $normalized;
-    }
-
-
-
-    private function log(RawMessage $message, string $result, ?array $failures = []): void
+    public function log(RawMessage $message, string $result, ?array $failures = []): void
     {
         if (!$this->loggingEnabled || !$message instanceof Email) {
             return;
@@ -78,5 +59,21 @@ class EmailLogger
 
         $this->em->persist($log);
         $this->em->flush();
+    }
+
+    private function extractAddresses(array $addresses): array
+    {
+        $normalized = [];
+
+        foreach ($addresses as $address) {
+            if (method_exists($address, 'getAddress')) {
+                $normalized[] = [
+                    'email' => $address->getAddress(),
+                    'name' => $address->getName(),
+                ];
+            }
+        }
+
+        return $normalized;
     }
 }
