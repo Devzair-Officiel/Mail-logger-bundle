@@ -102,9 +102,9 @@ MailLoggerBundleConfigCommand   | Commande CLI pour afficher tous les paramètre
 
 📌 Prérequis
 
-    Symfony >= 6.3 / 7.x
+    Symfony >= 5 / 7.x
 
-    PHP >= 8.1
+    PHP >= 7.4
 
     symfony/mailer, symfony/mime
 
