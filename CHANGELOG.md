@@ -17,9 +17,6 @@
 - Injection de `%mail_logger.enabled%` dans les services
 
 ## [v1.0.1] - 2025-04-17
-- mise a jour README et CHANGELOG
-
-## [v1.0.1] - 2025-04-17
 - � Compatibilité Symfony 5.4 et suppression du composer.lock
 - mise a jour changelog
 - chore: update changelog for v1.0.1
