@@ -4,3 +4,4 @@
 .phpunit.result.cache
 /release.sh
 /Makefile
+/composer.lock
