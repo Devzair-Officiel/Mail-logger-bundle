@@ -24,4 +24,6 @@ et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 - Injection de `%mail_logger.enabled%` dans les services
 
 ## [v1.0.1] - 2025-04-17
+- mise a jour composer et changelog
+- chore: update changelog for v1.0.1
 - mise a jour composer
