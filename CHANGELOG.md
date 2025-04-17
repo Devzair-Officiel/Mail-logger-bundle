@@ -42,3 +42,6 @@ et ce projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [v1.0.6] - 2025-04-16
 - mise a jour du fichier MailLoggerExtension, car il n'y a pas de services.yaml
+
+## [v1.0.1] - 2025-04-17
+- mise a jour composer
