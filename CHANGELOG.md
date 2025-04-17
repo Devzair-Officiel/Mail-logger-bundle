@@ -15,3 +15,6 @@
   - `mail:test` : envoi d’un mail de test
 - Configuration centralisée via `mail_logger.yaml`
 - Injection de `%mail_logger.enabled%` dans les services
+
+## [v1.0.1] - 2025-04-17
+- mise a jour README et CHANGELOG
