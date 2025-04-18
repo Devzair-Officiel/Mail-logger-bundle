@@ -16,8 +16,11 @@
       "symfony/dependency-injection": "^6.0 || ^7.0",
       "symfony/config": "^6.0 || ^7.0",
       "symfony/http-kernel": "^6.0 || ^7.0",
-      "doctrine/orm": "^2.14 || ^3.0",
-      "symfony/validator": "^7.2"
+      "symfony/validator": "^6.0 || ^7.0",
+      "doctrine/orm": "^2.14 || ^3.0"
+   },
+   "require-dev": {
+      "phpunit/phpunit": "^10.0"
    },
    "autoload": {
       "psr-4": {
@@ -33,8 +36,5 @@
       "branch-alias": {
          "dev-main": "2.0-dev"
       }
-   },
-   "require-dev": {
-      "phpunit/phpunit": "^11.5"
    }
 }
